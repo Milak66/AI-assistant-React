@@ -35,7 +35,7 @@ function App() {
         setLoading(true);
     
         try {
-            const response = await fetch(`${import.meta.env.AI_SERVER_LINK}/ask`, {
+            const response = await fetch(`${import.meta.env.VITE_AI_SERVER_LINK}/ask`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
