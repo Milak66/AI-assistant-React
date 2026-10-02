@@ -98,8 +98,7 @@ function App() {
                             <h1>FUNner</h1>
 
                             <div className="status">
-                                <span className="status-dot" />
-                                <span>Online</span>
+                                <span>AI Assistant</span>
                             </div>
                         </div>
                     </div>
@@ -164,7 +163,7 @@ function App() {
                                 setInput(event.target.value)
                             }
                             onKeyDown={handleKeyDown}
-                            placeholder="Message AI Assistant..."
+                            placeholder="Message FUNner..."
                             rows={1}
                         />
 

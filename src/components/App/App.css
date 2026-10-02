@@ -91,16 +91,6 @@ textarea {
     font-size: 0.75vw;
 }
 
-.status-dot {
-    width: 0.4vw;
-    height: 0.4vw;
-    min-width: 6px;
-    min-height: 6px;
-    border-radius: 50%;
-    background: #72df9b;
-    box-shadow: 0 0 0.7vw rgba(114, 223, 155, 0.7);
-}
-
 .clear-button {
     padding: 0.9vh 1vw;
     border: 1px solid rgba(255, 255, 255, 0.07);
@@ -378,11 +368,6 @@ textarea {
     .status {
         gap: 1vw;
         font-size: 3vw;
-    }
-
-    .status-dot {
-        width: 1.8vw;
-        height: 1.8vw;
     }
 
     .clear-button {
