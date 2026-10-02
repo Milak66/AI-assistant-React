@@ -14,7 +14,7 @@ interface InitialState {
 
 const initialState: InitialState = {
     messages: [{
-        text: "What's up? I'm your AI assistant. How can I help you?",
+        text: "Sup! I'm your AI assistant. How can I help you?",
         id: Date.now(),
         sender: "ai"
     },]

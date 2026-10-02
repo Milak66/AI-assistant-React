@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../store/store";
 import { onAddMessage } from "../reducer/reducer";
 import { Message } from "../reducer/reducer";
+import funner from "../../assets/funner.jpg";
 
 function App() {
     const [input, setInput] = useState("");
@@ -34,7 +35,7 @@ function App() {
         setLoading(true);
     
         try {
-            const response = await fetch(import.meta.env.AI_SERVER_LINK, {
+            const response = await fetch(`${import.meta.env.AI_SERVER_LINK}/ask`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -90,11 +91,11 @@ function App() {
                 <header className="assistant-header">
                     <div className="assistant-title">
                         <div className="assistant-icon">
-                            <span>✦</span>
+                            <img className="funner-img" src={funner} alt="" />
                         </div>
 
                         <div className="title-content">
-                            <h1>AI Assistant</h1>
+                            <h1>FUNner</h1>
 
                             <div className="status">
                                 <span className="status-dot" />
@@ -116,7 +117,7 @@ function App() {
                         >
                             {message.sender === "ai" && (
                                 <div className="message-avatar">
-                                    ✦
+                                    <img className="funner-img-message" src={funner} alt="" />
                                 </div>
                             )}
 
@@ -124,7 +125,7 @@ function App() {
                                 <span className="message-name">
                                     {message.sender === "user"
                                         ? "You"
-                                        : "AI Assistant"}
+                                        : "FUNner"}
                                 </span>
 
                                 <div className="message">
@@ -142,7 +143,7 @@ function App() {
 
                             <div className="message-wrapper">
                                 <span className="message-name">
-                                    AI Assistant
+                                    FUNner
                                 </span>
 
                                 <div className="message typing">

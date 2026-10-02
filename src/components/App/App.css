@@ -71,9 +71,8 @@ textarea {
     box-shadow: 0 0.8vh 2vw rgba(116, 63, 208, 0.3);
 }
 
-.assistant-icon span {
-    font-size: 1.3vw;
-    color: white;
+.funner-img {
+    width: 5vw;
 }
 
 .title-content h1 {
@@ -172,6 +171,10 @@ textarea {
     color: white;
     font-size: 0.75vw;
     box-shadow: 0 0.5vh 1.5vw rgba(103, 54, 185, 0.22);
+}
+
+.funner-img-message {
+    width: 3.5vw;
 }
 
 .message-wrapper {
@@ -356,10 +359,8 @@ textarea {
         padding: 0 5vw;
     }
 
-    .assistant-icon {
-        width: 10vw;
-        height: 10vw;
-        border-radius: 3vw;
+    .funner-img {
+        width: 13vw;
     }
 
     .assistant-icon span {
@@ -400,6 +401,10 @@ textarea {
         height: 7vw;
         border-radius: 2vw;
         font-size: 2.5vw;
+    }
+
+    .funner-img-message {
+        width: 10vw;
     }
 
     .message-wrapper {
