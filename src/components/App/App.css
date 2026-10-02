@@ -1,0 +1,457 @@
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 4vw;
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(116, 63, 208, 0.18),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(87, 42, 145, 0.08),
+            transparent 30%
+        ),
+        #090611;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+.assistant {
+    width: 75vw;
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(180, 140, 255, 0.16);
+    border-radius: 2vw;
+    background: rgba(19, 12, 31, 0.96);
+    box-shadow:
+        0 4vh 8vw rgba(0, 0, 0, 0.5),
+        0 0 8vw rgba(108, 52, 180, 0.08);
+}
+
+.assistant-header {
+    min-height: 11vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(20, 13, 31, 0.7);
+}
+
+.assistant-title {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.assistant-icon {
+    width: 3.2vw;
+    height: 3.2vw;
+    min-width: 42px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vw;
+    background: linear-gradient(135deg, #6e3ac4, #a36cff);
+    box-shadow: 0 0.8vh 2vw rgba(116, 63, 208, 0.3);
+}
+
+.assistant-icon span {
+    font-size: 1.3vw;
+    color: white;
+}
+
+.title-content h1 {
+    margin: 0;
+    font-size: 1.4vw;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+    margin-top: 0.4vh;
+    color: #847b91;
+    font-size: 0.75vw;
+}
+
+.status-dot {
+    width: 0.4vw;
+    height: 0.4vw;
+    min-width: 6px;
+    min-height: 6px;
+    border-radius: 50%;
+    background: #72df9b;
+    box-shadow: 0 0 0.7vw rgba(114, 223, 155, 0.7);
+}
+
+.clear-button {
+    padding: 0.9vh 1vw;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 0.6vw;
+    background: rgba(255, 255, 255, 0.04);
+    color: #92899f;
+    font-size: 0.8vw;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.clear-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(180, 140, 255, 0.18);
+    color: #eee8f5;
+}
+
+.chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 3vh 2.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(140, 100, 190, 0.3) transparent;
+}
+
+.chat::-webkit-scrollbar {
+    width: 0.35vw;
+}
+
+.chat::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    border-radius: 1vw;
+    background: rgba(140, 100, 190, 0.3);
+}
+
+.message-row {
+    display: flex;
+    width: 100%;
+    gap: 0.7vw;
+}
+
+.message-row.user {
+    justify-content: flex-end;
+}
+
+.message-row.ai {
+    justify-content: flex-start;
+}
+
+.message-avatar {
+    width: 2.2vw;
+    height: 2.2vw;
+    min-width: 28px;
+    min-height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.3vh;
+    border-radius: 0.7vw;
+    background: linear-gradient(135deg, #6736b9, #9660e8);
+    color: white;
+    font-size: 0.75vw;
+    box-shadow: 0 0.5vh 1.5vw rgba(103, 54, 185, 0.22);
+}
+
+.message-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 65%;
+}
+
+.message-row.user .message-wrapper {
+    align-items: flex-end;
+}
+
+.message-row.ai .message-wrapper {
+    align-items: flex-start;
+}
+
+.message-name {
+    margin-bottom: 0.5vh;
+    color: #71687d;
+    font-size: 0.65vw;
+    font-weight: 500;
+}
+
+.message {
+    padding: 1.3vh 1vw;
+    border-radius: 1vw;
+    font-size: 0.85vw;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.message-row.ai .message {
+    border-bottom-left-radius: 0.3vw;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    background: #21162f;
+    color: #e9e1f1;
+    box-shadow: 0 0.5vh 2vw rgba(0, 0, 0, 0.12);
+}
+
+.message-row.user .message {
+    border-bottom-right-radius: 0.3vw;
+    background: linear-gradient(135deg, #6f3dbd, #824bd4);
+    color: white;
+    box-shadow: 0 0.7vh 2.5vw rgba(104, 57, 179, 0.2);
+}
+
+.typing {
+    display: flex;
+    align-items: center;
+    gap: 0.3vw;
+    min-width: 4vw;
+}
+
+.typing span {
+    width: 0.35vw;
+    height: 0.35vw;
+    min-width: 5px;
+    min-height: 5px;
+    border-radius: 50%;
+    background: #9a82bb;
+    animation: typing 1.2s infinite;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes typing {
+    0%,
+    60%,
+    100% {
+        opacity: 0.25;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-0.3vh);
+    }
+}
+
+.bottom-area {
+    padding: 0 2.5vw 1.5vh;
+}
+
+.input-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.7vw;
+    padding: 1vh 0.7vw 1vh 1vw;
+    border: 1px solid rgba(170, 125, 255, 0.15);
+    border-radius: 1vw;
+    background: #130d1e;
+    box-shadow: 0 1vh 3.5vw rgba(0, 0, 0, 0.16);
+    transition: 0.2s;
+}
+
+.input-area:focus-within {
+    border-color: rgba(160, 110, 235, 0.35);
+    box-shadow:
+        0 1vh 3.5vw rgba(0, 0, 0, 0.18),
+        0 0 2.5vw rgba(116, 63, 208, 0.06);
+}
+
+.input-area textarea {
+    flex: 1;
+    resize: none;
+    min-height: 5vh;
+    max-height: 16vh;
+    padding: 1.2vh 0.3vw;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #f5f1ff;
+    font-size: 0.85vw;
+    line-height: 1.45;
+}
+
+.input-area textarea::placeholder {
+    color: #696171;
+}
+
+.send-button {
+    width: 3vw;
+    height: 3vw;
+    min-width: 42px;
+    min-height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 0.8vw;
+    background: linear-gradient(135deg, #7040bd, #854fd4);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.send-button svg {
+    width: 1.3vw;
+    height: 1.3vw;
+}
+
+.send-button:hover:not(:disabled) {
+    transform: translateY(-0.2vh);
+    background: linear-gradient(135deg, #7b48ce, #925ce3);
+}
+
+.send-button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.hint {
+    margin: 0.9vh 0 0;
+    text-align: center;
+    color: #57505f;
+    font-size: 0.6vw;
+}
+
+@media (max-width: 700px) {
+    .app {
+        padding: 0;
+    }
+
+    .assistant {
+        width: 100vw;
+        height: 100dvh;
+        min-height: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .assistant-header {
+        min-height: 10vh;
+        padding: 0 5vw;
+    }
+
+    .assistant-icon {
+        width: 10vw;
+        height: 10vw;
+        border-radius: 3vw;
+    }
+
+    .assistant-icon span {
+        font-size: 4vw;
+    }
+
+    .assistant-title {
+        gap: 2.5vw;
+    }
+
+    .title-content h1 {
+        font-size: 4.5vw;
+    }
+
+    .status {
+        gap: 1vw;
+        font-size: 3vw;
+    }
+
+    .status-dot {
+        width: 1.8vw;
+        height: 1.8vw;
+    }
+
+    .clear-button {
+        padding: 1vh 3vw;
+        border-radius: 2vw;
+        font-size: 3vw;
+    }
+
+    .chat {
+        padding: 3vh 5vw;
+        gap: 2.5vh;
+    }
+
+    .message-avatar {
+        width: 7vw;
+        height: 7vw;
+        border-radius: 2vw;
+        font-size: 2.5vw;
+    }
+
+    .message-wrapper {
+        max-width: 82%;
+    }
+
+    .message-name {
+        margin-bottom: 0.6vh;
+        font-size: 2.5vw;
+    }
+
+    .message {
+        padding: 1.3vh 3vw;
+        border-radius: 3vw;
+        font-size: 3.5vw;
+    }
+
+    .message-row.ai .message {
+        border-bottom-left-radius: 1vw;
+    }
+
+    .message-row.user .message {
+        border-bottom-right-radius: 1vw;
+    }
+
+    .bottom-area {
+        padding: 0 4vw 1.5vh;
+    }
+
+    .input-area {
+        gap: 2vw;
+        padding: 1vh 2vw 1vh 3vw;
+        border-radius: 3vw;
+    }
+
+    .input-area textarea {
+        min-height: 5vh;
+        font-size: 3.5vw;
+    }
+
+    .send-button {
+        width: 11vw;
+        height: 11vw;
+        border-radius: 2.5vw;
+    }
+
+    .send-button svg {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .hint {
+        font-size: 2.3vw;
+    }
+}
